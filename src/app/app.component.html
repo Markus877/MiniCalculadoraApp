@@ -1,21 +1,31 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">{{title}}</h1>
 
-<h1>{{title}}</h1>
+  <div class="card shadow">
+    <div class="card-body">
+      <form>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="numero1" class="form-label">Número 1:</label>
+            <input type="text" class="form-control" [(ngModel)]="numero1" name="numero1" id="numero1" placeholder="Ingrese el primer número">
+          </div>
+          <div class="col-md-6">
+            <label for="numero2" class="form-label">Número 2:</label>
+            <input type="text" class="form-control" [(ngModel)]="numero2" name="numero2" id="numero2" placeholder="Ingrese el segundo número">
+          </div>
+        </div>
 
-<div class="container">
-  <form>
+        <div class="d-flex justify-content-center gap-2">
+          <button type="button" (click)="sumar()" class="btn btn-primary">+</button>
+          <button type="button" (click)="restar()" class="btn btn-secondary">-</button>
+          <button type="button" (click)="multiplicar()" class="btn btn-success">X</button>
+          <button type="button" (click)="dividir()" class="btn btn-danger">/</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-    Número 1: <input type="text" [(ngModel)]="numero1" name="numero1">
-
-    <br><br>
-
-    Número 2: <input type="text" [(ngModel)]="numero2" name="numero2">
-
-    <br><br>
-
-    <input type="submit" value="+" (click)="sumar()" class="btn btn-primary"> 
-    <input type="submit" value="-" (click)="restar()" class="btn btn-primary">
-    <input type="submit" value="X" (click)="multiplicar()" class="btn btn-primary">
-    <input type="submit" value="/" (click)="dividir()" class="btn btn-primary">
-  </form>
+  <div class="mt-4 text-center">
+    <p class="fs-4">Resultado: <span class="fw-bold">{{resultado}}</span></p>
+  </div>
 </div>
-<p>Resultado: {{resultado}}</p>
